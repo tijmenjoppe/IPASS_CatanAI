@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userinterfaces package &#8212; CatanAI  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="test package" href="test.html" />
+    <link rel="prev" title="mcts package" href="mcts.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="userinterfaces-package">
+<h1>userinterfaces package<a class="headerlink" href="#userinterfaces-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-userinterfaces.GraphicalDecisionMaker">
+<span id="userinterfaces-graphicaldecisionmaker-module"></span><h2>userinterfaces.GraphicalDecisionMaker module<a class="headerlink" href="#module-userinterfaces.GraphicalDecisionMaker" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="userinterfaces.GraphicalDecisionMaker.PlayerDecisionMaker">
+<em class="property">class </em><code class="sig-prename descclassname">userinterfaces.GraphicalDecisionMaker.</code><code class="sig-name descname">PlayerDecisionMaker</code><a class="headerlink" href="#userinterfaces.GraphicalDecisionMaker.PlayerDecisionMaker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="gameflow.html#gameflow.Client.DecisionMaker" title="gameflow.Client.DecisionMaker"><code class="xref py py-class docutils literal notranslate"><span class="pre">gameflow.Client.DecisionMaker</span></code></a></p>
+<p>A decision maker, that in this case asks the player on a pygame window.</p>
+<dl class="py method">
+<dt id="userinterfaces.GraphicalDecisionMaker.PlayerDecisionMaker.make_decision">
+<code class="sig-name descname">make_decision</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="gameflow.html#gameflow.ActionsAndTurns.Action" title="gameflow.ActionsAndTurns.Action">gameflow.ActionsAndTurns.Action</a><a class="headerlink" href="#userinterfaces.GraphicalDecisionMaker.PlayerDecisionMaker.make_decision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decides which action will be taken next.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.GraphicalDecisionMaker.PlayerDecisionMaker.set_game">
+<code class="sig-name descname">set_game</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">game_state</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gamemodels.html#gamemodels.GameState.GameState" title="gamemodels.GameState.GameState">gamemodels.GameState.GameState</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.GraphicalDecisionMaker.PlayerDecisionMaker.set_game" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.GraphicalDecisionMaker.PlayerDecisionMaker.set_player_id">
+<code class="sig-name descname">set_player_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.GraphicalDecisionMaker.PlayerDecisionMaker.set_player_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-userinterfaces.PygameUI">
+<span id="userinterfaces-pygameui-module"></span><h2>userinterfaces.PygameUI module<a class="headerlink" href="#module-userinterfaces.PygameUI" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="userinterfaces.PygameUI.DisplayInfo">
+<em class="property">class </em><code class="sig-prename descclassname">userinterfaces.PygameUI.</code><code class="sig-name descname">DisplayInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_size_factor</span></em>, <em class="sig-param"><span class="n">camera_offset</span></em>, <em class="sig-param"><span class="n">settlement_size</span></em>, <em class="sig-param"><span class="n">tile_font</span></em>, <em class="sig-param"><span class="n">player_start</span></em>, <em class="sig-param"><span class="n">player_width</span></em>, <em class="sig-param"><span class="n">player_font</span></em>, <em class="sig-param"><span class="n">log_start</span></em>, <em class="sig-param"><span class="n">log_amount</span></em>, <em class="sig-param"><span class="n">window_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.DisplayInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Just holds settings information for the user interface.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="userinterfaces.PygameUI.Option">
+<em class="property">class </em><code class="sig-prename descclassname">userinterfaces.PygameUI.</code><code class="sig-name descname">Option</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gameflow.html#gameflow.ActionsAndTurns.Action" title="gameflow.ActionsAndTurns.Action">gameflow.ActionsAndTurns.Action</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.Option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A action that can be displayed on the screen.</p>
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.Option.display_position">
+<code class="sig-name descname">display_position</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pygame_ui</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#userinterfaces.PygameUI.PygameUserInterface" title="userinterfaces.PygameUI.PygameUserInterface">userinterfaces.PygameUI.PygameUserInterface</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.Option.display_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>What screen-position this option claims.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.Option.draw">
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pygame_ui</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#userinterfaces.PygameUI.PygameUserInterface" title="userinterfaces.PygameUI.PygameUserInterface">userinterfaces.PygameUI.PygameUserInterface</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.Option.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw this option on the screen.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.Option.option_on_board">
+<code class="sig-name descname">option_on_board</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#userinterfaces.PygameUI.Option.option_on_board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should this option be displayed at the bord, else it should be displayed on the side.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.Option.set_line">
+<code class="sig-name descname">set_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">line</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.Option.set_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="userinterfaces.PygameUI.PygameUserInterface">
+<em class="property">class </em><code class="sig-prename descclassname">userinterfaces.PygameUI.</code><code class="sig-name descname">PygameUserInterface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">game_state</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">1000, 700</span></em>, <em class="sig-param"><span class="n">fps</span><span class="o">=</span><span class="default_value">20</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
+<p>A graphical user interface using pygame.</p>
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.corner_draw_location">
+<code class="sig-name descname">corner_draw_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.corner_draw_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the location from the corner-coordinate-system to the display-coordinate-system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.draw_city">
+<code class="sig-name descname">draw_city</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">city</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gamemodels.html#gamemodels.BoardPieces.City" title="gamemodels.BoardPieces.City">gamemodels.BoardPieces.City</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.draw_city" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the settlement in the form of a house.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.draw_corner_dot">
+<code class="sig-name descname">draw_corner_dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_location</span></em>, <em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.draw_corner_dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws a dot on this corner-coordinate location.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.draw_edge_dot">
+<code class="sig-name descname">draw_edge_dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">edge_location</span></em>, <em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.draw_edge_dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws a dot on this edge-coordinate location.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.draw_player_index">
+<code class="sig-name descname">draw_player_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gamemodels.html#gamemodels.Players.Player" title="gamemodels.Players.Player">gamemodels.Players.Player</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.draw_player_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the resources this player has.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.draw_road">
+<code class="sig-name descname">draw_road</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">road</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gamemodels.html#gamemodels.BoardPieces.Road" title="gamemodels.BoardPieces.Road">gamemodels.BoardPieces.Road</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.draw_road" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the road in the form of a line.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.draw_settlement">
+<code class="sig-name descname">draw_settlement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settlement</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gamemodels.html#gamemodels.BoardPieces.Settlement" title="gamemodels.BoardPieces.Settlement">gamemodels.BoardPieces.Settlement</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.draw_settlement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the settlement in the form of a house.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.draw_tile">
+<code class="sig-name descname">draw_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tile</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gamemodels.html#gamemodels.Tiles.Tile" title="gamemodels.Tiles.Tile">gamemodels.Tiles.Tile</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.draw_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the hexagonal tile in the correct location.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.edge_draw_location">
+<code class="sig-name descname">edge_draw_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">edge_location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.edge_draw_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the location from the edge-coordinate-system to the display-coordinate-system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.get_decision">
+<code class="sig-name descname">get_decision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">valid_actions</span><span class="p">:</span> <span class="n">list</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="gameflow.html#gameflow.ActionsAndTurns.Action" title="gameflow.ActionsAndTurns.Action">gameflow.ActionsAndTurns.Action</a><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.get_decision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a action decided by the player.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main loop of the user interface, this runs on a separate thread.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.show_cursor_info">
+<code class="sig-name descname">show_cursor_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mouse_pos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.show_cursor_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows coordinate information by hovering the mouse over it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.show_expandables">
+<code class="sig-name descname">show_expandables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.show_expandables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows what corner and edge locations the players can expand to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.show_log">
+<code class="sig-name descname">show_log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.show_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the history of actions taken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.show_options">
+<code class="sig-name descname">show_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.show_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the actions the player has as options.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.show_produce_stats">
+<code class="sig-name descname">show_produce_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.show_produce_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows how much a corner-location produces from red to green.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="userinterfaces.PygameUI.PygameUserInterface.show_turn">
+<code class="sig-name descname">show_turn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.PygameUserInterface.show_turn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows who’s turn it is currently.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="userinterfaces.PygameUI.closest_point_cursor">
+<code class="sig-prename descclassname">userinterfaces.PygameUI.</code><code class="sig-name descname">closest_point_cursor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">display_points</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">mouse_pos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.closest_point_cursor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the index of the point that is closest to the mouse position.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="userinterfaces.PygameUI.distance_points">
+<code class="sig-prename descclassname">userinterfaces.PygameUI.</code><code class="sig-name descname">distance_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point1</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">point2</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#userinterfaces.PygameUI.distance_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the distance between two points.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="userinterfaces.PygameUI.mix_colors">
+<code class="sig-prename descclassname">userinterfaces.PygameUI.</code><code class="sig-name descname">mix_colors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color1</span></em>, <em class="sig-param"><span class="n">color2</span></em>, <em class="sig-param"><span class="n">mix</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span><a class="headerlink" href="#userinterfaces.PygameUI.mix_colors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the value of ‘mix’ that is between 0.0 and 1.0 to mix the two colors.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-userinterfaces">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-userinterfaces" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CatanAI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">CatanAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gameflow.html">gameflow package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gamemodels.html">gamemodels package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mcts.html">mcts package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">userinterfaces package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-userinterfaces.GraphicalDecisionMaker">userinterfaces.GraphicalDecisionMaker module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-userinterfaces.PygameUI">userinterfaces.PygameUI module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-userinterfaces">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">test package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="mcts.html" title="previous chapter">mcts package</a></li>
+      <li>Next: <a href="test.html" title="next chapter">test package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Lucas van der Horst.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/userinterfaces.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

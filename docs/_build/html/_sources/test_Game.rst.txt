@@ -1,0 +1,7 @@
+test\_Game module
+=================
+
+.. automodule:: test_Game
+   :members:
+   :undoc-members:
+   :show-inheritance:

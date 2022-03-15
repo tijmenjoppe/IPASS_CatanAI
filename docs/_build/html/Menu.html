@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu module &#8212; CatanAI  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gameflow package" href="gameflow.html" />
+    <link rel="prev" title="CatanAI" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-Menu">
+<span id="menu-module"></span><h1>Menu module<a class="headerlink" href="#module-Menu" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="Menu.create_bot">
+<code class="sig-prename descclassname">Menu.</code><code class="sig-name descname">create_bot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">difficulty</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Menu.create_bot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a MCTS bot with this difficulty value.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Menu.get_user_input">
+<code class="sig-prename descclassname">Menu.</code><code class="sig-name descname">get_user_input</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">question</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">acceptance_function</span></em>, <em class="sig-param"><span class="n">extra_help</span><span class="o">=</span><span class="default_value">'No extra help available'</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#Menu.get_user_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prevents wrong user inputs, by using a acceptance_function,
+that should return a boolean that indicates if the user input is in the correct format.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Menu.host_game">
+<code class="sig-prename descclassname">Menu.</code><code class="sig-name descname">host_game</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_amount</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">layout_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">difficulties</span><span class="p">:</span> <span class="n">list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Menu.host_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Host a game by starting a server and bots.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Menu.is_valid_ipv4_address">
+<code class="sig-prename descclassname">Menu.</code><code class="sig-name descname">is_valid_ipv4_address</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">address</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#Menu.is_valid_ipv4_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this string in the ipv4 format.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Menu.is_valid_layout">
+<code class="sig-prename descclassname">Menu.</code><code class="sig-name descname">is_valid_layout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#Menu.is_valid_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this string a valid file path to a valid game-board layout.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Menu.join_game">
+<code class="sig-prename descclassname">Menu.</code><code class="sig-name descname">join_game</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ip</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Menu.join_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Join as player in a game hosted at this ip.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Menu.start_menu">
+<code class="sig-prename descclassname">Menu.</code><code class="sig-name descname">start_menu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Menu.start_menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CatanAI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">CatanAI</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Menu module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gameflow.html">gameflow package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gamemodels.html">gamemodels package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mcts.html">mcts package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userinterfaces.html">userinterfaces package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">test package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">CatanAI</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">CatanAI</a></li>
+      <li>Next: <a href="gameflow.html" title="next chapter">gameflow package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Lucas van der Horst.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Menu.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

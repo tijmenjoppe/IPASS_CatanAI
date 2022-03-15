@@ -1,0 +1,7 @@
+test\_MCTS module
+=================
+
+.. automodule:: test_MCTS
+   :members:
+   :undoc-members:
+   :show-inheritance:

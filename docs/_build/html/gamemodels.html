@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gamemodels package &#8212; CatanAI  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mcts package" href="mcts.html" />
+    <link rel="prev" title="gameflow package" href="gameflow.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="gamemodels-package">
+<h1>gamemodels package<a class="headerlink" href="#gamemodels-package" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="_images/tile_coordinate_system.jpg"><img alt="tile_coordinate_system" src="_images/tile_coordinate_system.jpg" style="width: 352.09999999999997px; height: 552.3px;" /></a>
+<p class="caption"><span class="caption-text">The tile-coordinate-system.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="_images/corner_coordinate_system2.jpg"><img alt="corner_coordinate_system" src="_images/corner_coordinate_system2.jpg" style="width: 402.40000000000003px; height: 323.20000000000005px;" /></a>
+<p class="caption"><span class="caption-text">The corner-coordinate-system.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="_images/edge_coordinate_system.jpg"><img alt="edge_coordinate_system" src="_images/edge_coordinate_system.jpg" style="width: 603.6px; height: 333.59999999999997px;" /></a>
+<p class="caption"><span class="caption-text">The edge-coordinate-system.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-gamemodels.Board">
+<span id="gamemodels-board-module"></span><h2>gamemodels.Board module<a class="headerlink" href="#module-gamemodels.Board" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="gamemodels.Board.Board">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.Board.</code><code class="sig-name descname">Board</code><a class="headerlink" href="#gamemodels.Board.Board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Everything that stands on the board, so the tiles, corner-pieces and edge-pieces.</p>
+<dl class="py method">
+<dt id="gamemodels.Board.Board.add_token_to_tile">
+<code class="sig-name descname">add_token_to_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span></em>, <em class="sig-param"><span class="n">tile_location</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.add_token_to_tile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.all_placeable_corner_spots">
+<code class="sig-name descname">all_placeable_corner_spots</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.Board.Board.all_placeable_corner_spots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the corner-coordinates that are placeable. AKA it lays adjacent to a land tile.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.all_placeable_edge_spots">
+<code class="sig-name descname">all_placeable_edge_spots</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.Board.Board.all_placeable_edge_spots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the edge-coordinates that are placeable. AKA it lays adjacent to a land tile.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.calculate_pips">
+<code class="sig-name descname">calculate_pips</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.calculate_pips" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the probability-points in advance so it doesn’t need to be done each time it’s requested.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.get_corner_piece">
+<code class="sig-name descname">get_corner_piece</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#gamemodels.BoardPieces.CornerPiece" title="gamemodels.BoardPieces.CornerPiece">gamemodels.BoardPieces.CornerPiece</a><a class="headerlink" href="#gamemodels.Board.Board.get_corner_piece" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.get_edge_piece">
+<code class="sig-name descname">get_edge_piece</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#gamemodels.BoardPieces.EdgePiece" title="gamemodels.BoardPieces.EdgePiece">gamemodels.BoardPieces.EdgePiece</a><a class="headerlink" href="#gamemodels.Board.Board.get_edge_piece" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.get_harbor">
+<code class="sig-name descname">get_harbor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#gamemodels.Board.Board.get_harbor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.get_settlements_of_player">
+<code class="sig-name descname">get_settlements_of_player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#gamemodels.Board.Board.get_settlements_of_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with all the locations and settlements of a certain player.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.get_tile">
+<code class="sig-name descname">get_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#gamemodels.Tiles.Tile" title="gamemodels.Tiles.Tile">gamemodels.Tiles.Tile</a><a class="headerlink" href="#gamemodels.Board.Board.get_tile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.get_token">
+<code class="sig-name descname">get_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#gamemodels.Tiles.Token" title="gamemodels.Tiles.Token">gamemodels.Tiles.Token</a><a class="headerlink" href="#gamemodels.Board.Board.get_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.hashable_location">
+<em class="property">static </em><code class="sig-name descname">hashable_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#gamemodels.Board.Board.hashable_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a numpy-array location to a hashable form so it can be used in dictionaries and sets.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.load_layout">
+<code class="sig-name descname">load_layout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.load_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a layout (tiles and tokens) from a certain file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.save_layout">
+<code class="sig-name descname">save_layout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.save_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the layout (tiles and tokens) to a certain file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.set_corner_piece">
+<code class="sig-name descname">set_corner_piece</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">corner_piece</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#gamemodels.BoardPieces.CornerPiece" title="gamemodels.BoardPieces.CornerPiece">gamemodels.BoardPieces.CornerPiece</a></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.set_corner_piece" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.set_edge_piece">
+<code class="sig-name descname">set_edge_piece</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">edge_piece</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#gamemodels.BoardPieces.EdgePiece" title="gamemodels.BoardPieces.EdgePiece">gamemodels.BoardPieces.EdgePiece</a></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.set_edge_piece" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.set_harbor">
+<code class="sig-name descname">set_harbor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">sell_type</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.set_harbor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.set_tile">
+<code class="sig-name descname">set_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">tile</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#gamemodels.Tiles.Tile" title="gamemodels.Tiles.Tile">gamemodels.Tiles.Tile</a></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.set_tile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.surround_with_water">
+<code class="sig-name descname">surround_with_water</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Board.Board.surround_with_water" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes sure that every land-tile is surrounded by other tiles. By surrounding them all with water.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.surrounding_corners_free">
+<code class="sig-name descname">surrounding_corners_free</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_location</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#gamemodels.Board.Board.surrounding_corners_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>A check for looking if there is enough space around the spot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Board.Board.valid_edge">
+<code class="sig-name descname">valid_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">edge_location</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#gamemodels.Board.Board.valid_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>This edge-location isn’t fully on water.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="gamemodels.Board.example_board">
+<code class="sig-prename descclassname">gamemodels.Board.</code><code class="sig-name descname">example_board</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#gamemodels.Board.Board" title="gamemodels.Board.Board">gamemodels.Board.Board</a><a class="headerlink" href="#gamemodels.Board.example_board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a board with the example layout from the Settlers of Catan rule book</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-gamemodels.BoardPieces">
+<span id="gamemodels-boardpieces-module"></span><h2>gamemodels.BoardPieces module<a class="headerlink" href="#module-gamemodels.BoardPieces" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="gamemodels.BoardPieces.BoardPiece">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.BoardPieces.</code><code class="sig-name descname">BoardPiece</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.BoardPieces.BoardPiece" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A interface for all the pieces that stand on the board.</p>
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.BoardPiece.get_location">
+<code class="sig-name descname">get_location</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#gamemodels.BoardPieces.BoardPiece.get_location" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.BoardPiece.get_player_id">
+<code class="sig-name descname">get_player_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#gamemodels.BoardPieces.BoardPiece.get_player_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.BoardPiece.set_location">
+<code class="sig-name descname">set_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.BoardPieces.BoardPiece.set_location" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="gamemodels.BoardPieces.City">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.BoardPieces.</code><code class="sig-name descname">City</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.BoardPieces.City" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gamemodels.BoardPieces.CornerPiece" title="gamemodels.BoardPieces.CornerPiece"><code class="xref py py-class docutils literal notranslate"><span class="pre">gamemodels.BoardPieces.CornerPiece</span></code></a></p>
+<p>The Settlers of Catan City piece.</p>
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.City.build_materials">
+<em class="property">static </em><code class="sig-name descname">build_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#gamemodels.BoardPieces.City.build_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.City.give_resources">
+<em class="property">static </em><code class="sig-name descname">give_resources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tile_type</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#gamemodels.BoardPieces.City.give_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>What resources should be given when adjacent to a tile-type</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="gamemodels.BoardPieces.CornerPiece">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.BoardPieces.</code><code class="sig-name descname">CornerPiece</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.BoardPieces.CornerPiece" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gamemodels.BoardPieces.BoardPiece" title="gamemodels.BoardPieces.BoardPiece"><code class="xref py py-class docutils literal notranslate"><span class="pre">gamemodels.BoardPieces.BoardPiece</span></code></a></p>
+<p>All the board-pieces that stand on the corner-coordinate-system, AKA the spots in the three-way intersections.</p>
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.CornerPiece.display_coordinate">
+<em class="property">classmethod </em><code class="sig-name descname">display_coordinate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_location</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#gamemodels.BoardPieces.CornerPiece.display_coordinate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the location in the display-coordinate-system.
+The function is just: x-y, x+y</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.CornerPiece.location_type">
+<em class="property">classmethod </em><code class="sig-name descname">location_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_location</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#gamemodels.BoardPieces.CornerPiece.location_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>A corner-coordinate can be on the top of a tile, the bottom of a tile,
+or inside (which should never be the case obviously).
+Outcomes of this function mean:
+0:Top, 1:Bottom or 2:Inside</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.CornerPiece.surrounding_edge_coordinates">
+<em class="property">classmethod </em><code class="sig-name descname">surrounding_edge_coordinates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corner_location</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.BoardPieces.CornerPiece.surrounding_edge_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the coordinates of the three edges surrounding this corner location.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="gamemodels.BoardPieces.EdgePiece">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.BoardPieces.</code><code class="sig-name descname">EdgePiece</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.BoardPieces.EdgePiece" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gamemodels.BoardPieces.BoardPiece" title="gamemodels.BoardPieces.BoardPiece"><code class="xref py py-class docutils literal notranslate"><span class="pre">gamemodels.BoardPieces.BoardPiece</span></code></a></p>
+<p>All the board-pieces that stand on the edge-coordinate-system, AKA the lines between two tiles.</p>
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.EdgePiece.connected_corner_coordinates">
+<em class="property">classmethod </em><code class="sig-name descname">connected_corner_coordinates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">edge_location</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.BoardPieces.EdgePiece.connected_corner_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>The corner-locations this edge-location is connected to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.EdgePiece.other_corner_location">
+<em class="property">classmethod </em><code class="sig-name descname">other_corner_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">edge_location</span></em>, <em class="sig-param"><span class="n">reference_corner_location</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#gamemodels.BoardPieces.EdgePiece.other_corner_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>When you have the edge-location and one corner-location
+the other corner-location can be faster calculated this way.
+The relation is really interesting:
+corner_location_a + corner_location_b = edge_location</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="gamemodels.BoardPieces.Road">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.BoardPieces.</code><code class="sig-name descname">Road</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.BoardPieces.Road" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gamemodels.BoardPieces.EdgePiece" title="gamemodels.BoardPieces.EdgePiece"><code class="xref py py-class docutils literal notranslate"><span class="pre">gamemodels.BoardPieces.EdgePiece</span></code></a></p>
+<p>The Settlers of Catan Road piece.</p>
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.Road.build_materials">
+<em class="property">static </em><code class="sig-name descname">build_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#gamemodels.BoardPieces.Road.build_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="gamemodels.BoardPieces.Settlement">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.BoardPieces.</code><code class="sig-name descname">Settlement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.BoardPieces.Settlement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gamemodels.BoardPieces.CornerPiece" title="gamemodels.BoardPieces.CornerPiece"><code class="xref py py-class docutils literal notranslate"><span class="pre">gamemodels.BoardPieces.CornerPiece</span></code></a></p>
+<p>The Settlers of Catan Settlement piece.</p>
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.Settlement.build_materials">
+<em class="property">static </em><code class="sig-name descname">build_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#gamemodels.BoardPieces.Settlement.build_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.BoardPieces.Settlement.give_resources">
+<em class="property">static </em><code class="sig-name descname">give_resources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tile_type</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#gamemodels.BoardPieces.Settlement.give_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>What resources should be given when adjacent to a tile-type</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-gamemodels.GameState">
+<span id="gamemodels-gamestate-module"></span><h2>gamemodels.GameState module<a class="headerlink" href="#module-gamemodels.GameState" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="gamemodels.GameState.GameState">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.GameState.</code><code class="sig-name descname">GameState</code><span class="sig-paren">(</span><em class="sig-param">first_turn: gameflow.ActionsAndTurns.Turn</em>, <em class="sig-param">end_game_points=10</em>, <em class="sig-param">board=&lt;gamemodels.Board.Board object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.GameState.GameState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A state of the game.</p>
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.add_player">
+<code class="sig-name descname">add_player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#gamemodels.Players.Player" title="gamemodels.Players.Player">gamemodels.Players.Player</a></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.GameState.GameState.add_player" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.apply_action">
+<code class="sig-name descname">apply_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gameflow.html#gameflow.ActionsAndTurns.Action" title="gameflow.ActionsAndTurns.Action">gameflow.ActionsAndTurns.Action</a></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.GameState.GameState.apply_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>THE way to change the gamestate, by applying a action to the gamestae.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.get_player">
+<code class="sig-name descname">get_player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#gamemodels.Players.Player" title="gamemodels.Players.Player">gamemodels.Players.Player</a><a class="headerlink" href="#gamemodels.GameState.GameState.get_player" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.is_valid_action">
+<code class="sig-name descname">is_valid_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gameflow.html#gameflow.ActionsAndTurns.Action" title="gameflow.ActionsAndTurns.Action">gameflow.ActionsAndTurns.Action</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#gamemodels.GameState.GameState.is_valid_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.update_expandability_corner">
+<code class="sig-name descname">update_expandability_corner</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.GameState.GameState.update_expandability_corner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updating all the player on where they can expand to, now that this player has build on this location.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.update_expandability_edge">
+<code class="sig-name descname">update_expandability_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.GameState.GameState.update_expandability_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updating all the player on where they can expand to, now that this player has build on this location.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.update_turn">
+<code class="sig-name descname">update_turn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_turn</span><span class="p">:</span> <span class="n"><a class="reference internal" href="gameflow.html#gameflow.ActionsAndTurns.Turn" title="gameflow.ActionsAndTurns.Turn">gameflow.ActionsAndTurns.Turn</a></span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.GameState.GameState.update_turn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace who’s turn it is next.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.valid_actions">
+<code class="sig-name descname">valid_actions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.GameState.GameState.valid_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all the valid actions the player whose turn it is can make.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.victory_points">
+<code class="sig-name descname">victory_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#gamemodels.GameState.GameState.victory_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of victory points a certain player has.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.GameState.GameState.winners">
+<code class="sig-name descname">winners</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.GameState.GameState.winners" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of players that have enough victory points.
+Nobody means the game isn’t done yet and the list is empty</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-gamemodels.Players">
+<span id="gamemodels-players-module"></span><h2>gamemodels.Players module<a class="headerlink" href="#module-gamemodels.Players" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="gamemodels.Players.Player">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.Players.</code><code class="sig-name descname">Player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_id</span></em>, <em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Players.Player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The game model of a player.</p>
+<dl class="py method">
+<dt id="gamemodels.Players.Player.add_harbor">
+<code class="sig-name descname">add_harbor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sell_type</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Players.Player.add_harbor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.add_resources">
+<code class="sig-name descname">add_resources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resources</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Players.Player.add_resources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.add_trade_possibility">
+<code class="sig-name descname">add_trade_possibility</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">trade</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Players.Player.add_trade_possibility" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.get_color">
+<code class="sig-name descname">get_color</code><span class="sig-paren">(</span><em class="sig-param">) -&gt; (&lt;class 'int'&gt;</em>, <em class="sig-param">&lt;class 'int'&gt;</em>, <em class="sig-param">&lt;class 'int'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Players.Player.get_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.get_expandable_corners">
+<code class="sig-name descname">get_expandable_corners</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.Players.Player.get_expandable_corners" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the corner-locations this player can expand to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.get_expandable_edges">
+<code class="sig-name descname">get_expandable_edges</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.Players.Player.get_expandable_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the edge-locations this player can expand to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.get_id">
+<code class="sig-name descname">get_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#gamemodels.Players.Player.get_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.get_resources">
+<code class="sig-name descname">get_resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#gamemodels.Players.Player.get_resources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.has_resources">
+<code class="sig-name descname">has_resources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resources</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#gamemodels.Players.Player.has_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this player have these resources.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.remove_resources">
+<code class="sig-name descname">remove_resources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resources</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Players.Player.remove_resources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.update_expandable_corners">
+<code class="sig-name descname">update_expandable_corners</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">board</span></em>, <em class="sig-param"><span class="n">by_player_id</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Players.Player.update_expandable_corners" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the places this player can expand to, by placing a corner.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Players.Player.update_expandable_edges">
+<code class="sig-name descname">update_expandable_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">board</span></em>, <em class="sig-param"><span class="n">by_player_id</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Players.Player.update_expandable_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the places this player can expand to, by placing a edge.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="gamemodels.Players.negative_dict">
+<code class="sig-prename descclassname">gamemodels.Players.</code><code class="sig-name descname">negative_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dictionary</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#gamemodels.Players.negative_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiplies every value with minus one.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-gamemodels.Tiles">
+<span id="gamemodels-tiles-module"></span><h2>gamemodels.Tiles module<a class="headerlink" href="#module-gamemodels.Tiles" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="gamemodels.Tiles.Tile">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.Tiles.</code><code class="sig-name descname">Tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tile_type</span></em>, <em class="sig-param"><span class="n">start_token</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Tiles.Tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The hexagonal tile that forms the board and layout.</p>
+<dl class="py method">
+<dt id="gamemodels.Tiles.Tile.add_token">
+<code class="sig-name descname">add_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Tiles.Tile.add_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Tiles.Tile.distribute_resources">
+<code class="sig-name descname">distribute_resources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">game_state</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Tiles.Tile.distribute_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives resources to all the players that have settlements adjacent too the tile.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Tiles.Tile.set_location">
+<code class="sig-name descname">set_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gamemodels.Tiles.Tile.set_location" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Tiles.Tile.surrounding_corner_coordinates">
+<em class="property">classmethod </em><code class="sig-name descname">surrounding_corner_coordinates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tile_location</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.Tiles.Tile.surrounding_corner_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the locations of adjacent corner spots. In the corner-coordinate-system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Tiles.Tile.surrounding_tiles_coordinates">
+<code class="sig-name descname">surrounding_tiles_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gamemodels.Tiles.Tile.surrounding_tiles_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the locations of the tiles surrounding this tile. In the tile-coordinate-system.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="gamemodels.Tiles.Token">
+<em class="property">class </em><code class="sig-prename descclassname">gamemodels.Tiles.</code><code class="sig-name descname">Token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Tiles.Token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The number tokens laying on the tiles</p>
+<dl class="py method">
+<dt id="gamemodels.Tiles.Token.add_tile">
+<code class="sig-name descname">add_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tile_location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Tiles.Token.add_tile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Tiles.Token.get_number">
+<code class="sig-name descname">get_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Tiles.Token.get_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Tiles.Token.get_tile_locations">
+<code class="sig-name descname">get_tile_locations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Tiles.Token.get_tile_locations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="gamemodels.Tiles.Token.probability">
+<em class="property">classmethod </em><code class="sig-name descname">probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamemodels.Tiles.Token.probability" title="Permalink to this definition">¶</a></dt>
+<dd><p>The chance this token will be thrown in one throw.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-gamemodels">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-gamemodels" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CatanAI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">CatanAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gameflow.html">gameflow package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">gamemodels package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gamemodels.Board">gamemodels.Board module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gamemodels.BoardPieces">gamemodels.BoardPieces module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gamemodels.GameState">gamemodels.GameState module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gamemodels.Players">gamemodels.Players module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gamemodels.Tiles">gamemodels.Tiles module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gamemodels">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mcts.html">mcts package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userinterfaces.html">userinterfaces package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">test package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="gameflow.html" title="previous chapter">gameflow package</a></li>
+      <li>Next: <a href="mcts.html" title="next chapter">mcts package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Lucas van der Horst.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gamemodels.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
